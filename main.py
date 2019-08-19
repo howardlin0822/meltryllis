@@ -29,5 +29,4 @@ def category(c):
     result.append(t)
   return render_template("category.html", d = result)
 
-app.run(debug=True,port='3000',host='0.0.0.0')
       
