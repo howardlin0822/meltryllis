@@ -1,0 +1,74 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">meltryllis</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/">首頁</a></li>
+          <li><a href="#">我的最愛</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="col-md-8 col-md-offset-2">
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th class="info">標題</th>
+                <th class="warning">修改時間</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for cat in d %}
+              <tr>
+                <td><a href="/">{{cat[0]}}</a></td>
+                <td>{{cat[1]}}</td>
+              </tr>
+              {% endfor %}
+                       <td>
+                    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">內容</button>
+                    <!-- Modal -->
+                    <div id="myModal" class="modal fade" role="dialog">
+                      <div class="modal-dialog">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h4 class="modal-title">Modal Header</h4>
+                          </div>
+                          <div class="modal-body">
+                            <p>{{cat[3]}}</p>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                </td>
+
+            </tbody>
+          </table>
+      </div>
+    </div>
+
+  </body>
+</html>

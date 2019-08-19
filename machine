@@ -1,0 +1,15 @@
+import random
+class Machine:
+  def __init__(self,l,h):
+    self.low = l
+    self.high = h
+    self.ans = random.randict(l,h)
+  def guess(self,g):
+    if g == self.ans:
+      return True
+    elif g > self.ans:
+      self.high = g
+      return False
+    else:
+      self.low = g
+      return False

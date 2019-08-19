@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+   
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">meltryllis</a>
+        </div>
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="#">首頁</a></li>
+          <li><a href="#">我的最愛</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+      <div class="col-md-4">
+        <img class="img-responsive " src="/static/llis(1).png">
+      </div>
+      <div class="col-md-8">
+        <h2>終於有泳裝啦!!!</h2> 
+              <p>以下是資料:</p>      
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>技能名稱</th>
+                    <th>效果(lv6)</th>
+                    <th>效果(lv10)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>罪惡芭蕾A</td>
+                    <td>對自身賦予迴避狀態(2次、3回合)星星獲得X10</td>
+                    <td>對自身賦予迴避狀態(2次、3回合)星星獲得X15</td>
+                  </tr>
+                  <tr>
+                    <td>嗜虐體質A</td>
+                    <td>自身的攻擊力提升20%(3回合)防禦力下降10%(3回合)</td>
+                    <td>自身的攻擊力提升20%(3回合)防禦力下降10%(3回合)</td>
+                  </tr>
+                  <tr>
+                    <td>溶解病毒EX</td>
+                    <td>敵全體的寶具威力下降35%(1回合)自身除外我方全體的寶具威力下降50%(1回合)自身的寶具威力提升25%(2回合)</td>
+                    <td>敵全體的寶具威力下降35%(1回合)自身除外我方全體的寶具威力下降50%(1回合)自身的寶具威力提升25%(2回合)</td>
+                  </tr>
+         
+                </tbody>
+              </table>
+      </div>
+    </div>
+    <div class="container">
+      <div class="col-md-8 col-md-offset-2">
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th class="danger">分類</th>
+                <th class="success">篇數</th>
+              </tr>
+            </thead>
+            <tbody>
+             {% for cat in d %}
+              <tr>
+                <td>{{cat[0]}}</td>
+                <td><a href="/category/{{cat[0]}}">{{cat[1]}}</a></td>
+              </tr>
+              {% endfor %}
+              
+               <tr>
+                <td>泳裝寶具~</td>
+                <td><a href="https://www.youtube.com/watch?v=OrFB7w9k5KQ">點這裡~</a></td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+    </div>
+    
+  </body>
+</html>
